@@ -240,3 +240,40 @@ const somaInfinita2 = (...args) => {
     return total;
 };
 console.log(somaInfinita2(2,1))
+
+//25 - Destructuring em objetos
+const userDetails = {
+    firstName:"Renan",
+    lastName: "Zorzal",
+    job:"Programador"
+}
+const {firstName, lastName, job} = userDetails;
+console.log(firstName, lastName, job);
+
+//renomear variaveis
+const {firstName: primeiroNome} = userDetails
+
+//26 - Destructuring em arrays
+const myList = ["Avião", "Submarino", "Carro"];
+const [veiculoA, veiculoB, veiculoC] = myList;
+console.log(veiculoA,veiculoB,veiculoC);
+
+//27 - JSON (nome da propriedade e o valor)
+const myJson= '{"name":"Renan","age":20,"skills":["PHP","JavaScript","Python"]}';
+console.log(typeof myJson);
+
+//28 - JSON para objeto e objeto para JSON
+const myObject = JSON.parse(myJson);
+console.log(myObject);
+console.log(myObject.name)
+
+//json invalido
+const badJson = '{"name": Renan, "age"=20}';
+
+//const myObject2 = JSON.parse(badJson);
+myObject.isOpenToWork = true;
+
+console.log(myObject)
+
+const myNewJson = JSON.stringify(myObject);
+console.log(myNewJson);
