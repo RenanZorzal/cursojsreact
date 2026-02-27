@@ -5,12 +5,21 @@ const campo2 = document.getElementById('campo2');
 
 
 enviar.addEventListener("click", () =>{
-    
-    for(const x = 0; x < campo2.value; x++){
-        console.log(campo1.value);
+     let resultado = '';
+    if(campo1.value == '' || campo2.value == ''){
+        resultado = "Erro! Preencha os campos";
+    }else{
+for(let x = 0; x <= campo2.value; x++){
+        let multi = campo1.value* x;
+        resultado = resultado + (x + "x" + campo1.value + ": " + multi)+"<br>";
         
-        conteudo.textContent = (x) +"x" +(campo1.value)+"="+ (x*campo1.value);
+        
     };
-    conteudo.textContent = "Teste";
+    }
+   
+    
+    
+    conteudo.innerHTML = resultado;
+   
 })
 
